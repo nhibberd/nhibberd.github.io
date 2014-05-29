@@ -1,5 +1,5 @@
 # Install
-##### locale
+#### locale
 ``` 
 /etc/locale.gen
 locale-gen
@@ -44,14 +44,14 @@ To use labels in place of uuid's replace `-U` with `-L`
 
 #### chroot and configure
 `arch-chroot /mnt /bin/bash`
-##### locale
+#### locale
 ``` 
 /etc/locale.gen
 locale-gen
 echo LANG=en_AU.UTF-8 > /etc/locale.conf
 export LANG=en_AU.UTF-8
 ```
-##### time
+#### time
 `ln -s /usr/share/zoneinfo/Australia/Brisbane /etc/localtime`
 `hwclock --systohc --utc`
 
