@@ -1,5 +1,5 @@
 # Install
-###### Locale
+##### Locale
 
 ``` 
 /etc/locale.gen
@@ -8,9 +8,9 @@ export LANG=en_AU.UTF-8
 ```
 
 ### [Partitioning](./linux/partioning.md)
-###### BIOS/UEFI
+##### BIOS/UEFI
 
-###### Mount
+##### Mount
 ```
 lsblk -f
 
@@ -25,7 +25,7 @@ mkdir /mnt/boot
 mount /dev/sdXY /mnt/boot
 ```
 
-### Pacman Mirror
+##### Pacman Mirror
 ` /etc/pacman.d/mirrorlist `
 ```
 ## Australia
@@ -38,11 +38,16 @@ Server = http://ftp.swin.edu.au/archlinux/$repo/os/$arch
 Server = http://archlinux.mirror.uber.com.au/$repo/os/$arch
 ```
 
-### Base System
+##### Base System
 `pacstrap -i /mnt base base-devel`
 
+##### Fstab
+`genfstab -U -p /mnt >> /mnt/etc/fstab`
 
+To use labels in place of uuid's replace `-U` with `-L`
 
+##### Chroot and configure
+`arch-chroot /mnt /bin/bash`
 
 # Maintenance
 
