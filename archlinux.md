@@ -65,7 +65,11 @@ Add entry to `/etc/hosts`
 
 ##### network
 `systmectl enable dhcpcd.service`
-See 
+See [network](https://github.com/nhibberd/nhibberd.github.io/blob/master/archlinux.md#network-1)
+
+##### boot loader
+
+
 # Maintenance
 
 ## Network
