@@ -7,8 +7,8 @@ export LANG=en_AU.UTF-8
 ```
 
 ### [Partitioning](./linux/partioning.md)
-##### BIOS/UEFI
-##### mount
+#### BIOS/UEFI
+#### mount
 ```
 lsblk -f
 
@@ -22,7 +22,7 @@ mkdir /mnt/boot
 mount /dev/sdXY /mnt/boot
 ```
 
-##### pacman mirror
+#### pacman mirror
 ` /etc/pacman.d/mirrorlist `
 ```
 ## Australia
@@ -35,35 +35,35 @@ Server = http://ftp.swin.edu.au/archlinux/$repo/os/$arch
 Server = http://archlinux.mirror.uber.com.au/$repo/os/$arch
 ```
 
-##### base System
+#### base System
 `pacstrap -i /mnt base base-devel`
 
-##### fstab
+#### fstab
 `genfstab -U -p /mnt >> /mnt/etc/fstab`
 To use labels in place of uuid's replace `-U` with `-L`
 
-##### chroot and configure
+#### chroot and configure
 `arch-chroot /mnt /bin/bash`
-###### locale
+##### locale
 ``` 
 /etc/locale.gen
 locale-gen
 echo LANG=en_AU.UTF-8 > /etc/locale.conf
 export LANG=en_AU.UTF-8
 ```
-###### time
+##### time
 `ln -s /usr/share/zoneinfo/Australia/Brisbane /etc/localtime`
 `hwclock --systohc --utc`
 
-##### hostname
+#### hostname
 `echo _ > /etc/hostname`
 Add entry to `/etc/hosts`
 
-##### network
+#### network
 `systmectl enable dhcpcd.service`
 See [network](https://github.com/nhibberd/nhibberd.github.io/blob/master/archlinux.md#network-1)
 
-##### boot loader
+#### boot loader
 
 
 # Maintenance
