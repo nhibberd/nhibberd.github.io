@@ -8,9 +8,9 @@ export LANG=en_AU.UTF-8
 ```
 
 ### [Partitioning](./linux/partioning.md)
-### BIOS/UEFI
+###### BIOS/UEFI
 
-### Mount
+###### Mount
 ```
 lsblk -f
 
@@ -40,6 +40,9 @@ Server = http://archlinux.mirror.uber.com.au/$repo/os/$arch
 
 ### Base System
 `pacstrap -i /mnt base base-devel`
+
+
+
 
 # Maintenance
 
