@@ -1,5 +1,5 @@
 # Install
-##### Locale
+##### locale
 
 ``` 
 /etc/locale.gen
@@ -10,7 +10,7 @@ export LANG=en_AU.UTF-8
 ### [Partitioning](./linux/partioning.md)
 ##### BIOS/UEFI
 
-##### Mount
+##### munt
 ```
 lsblk -f
 
@@ -25,7 +25,7 @@ mkdir /mnt/boot
 mount /dev/sdXY /mnt/boot
 ```
 
-##### Pacman Mirror
+##### pacman mirror
 ` /etc/pacman.d/mirrorlist `
 ```
 ## Australia
@@ -38,17 +38,34 @@ Server = http://ftp.swin.edu.au/archlinux/$repo/os/$arch
 Server = http://archlinux.mirror.uber.com.au/$repo/os/$arch
 ```
 
-##### Base System
+##### base System
 `pacstrap -i /mnt base base-devel`
 
-##### Fstab
+##### fstab
 `genfstab -U -p /mnt >> /mnt/etc/fstab`
 
 To use labels in place of uuid's replace `-U` with `-L`
 
-##### Chroot and configure
+##### chroot and configure
 `arch-chroot /mnt /bin/bash`
+###### locale
+``` 
+/etc/locale.gen
+locale-gen
+echo LANG=en_AU.UTF-8 > /etc/locale.conf
+export LANG=en_AU.UTF-8
+```
+###### time
+`ln -s /usr/share/zoneinfo/Australia/Brisbane /etc/localtime`
+`hwclock --systohc --utc`
 
+##### hostname
+`echo _ > /etc/hostname`
+Add entry to `/etc/hosts`
+
+##### network
+`systmectl enable dhcpcd.service`
+See 
 # Maintenance
 
 ## Network
