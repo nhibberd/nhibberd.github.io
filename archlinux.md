@@ -1,6 +1,5 @@
 # Install
 ##### locale
-
 ``` 
 /etc/locale.gen
 locale-gen
@@ -9,8 +8,7 @@ export LANG=en_AU.UTF-8
 
 ### [Partitioning](./linux/partioning.md)
 ##### BIOS/UEFI
-
-##### munt
+##### mount
 ```
 lsblk -f
 
@@ -18,7 +16,6 @@ mount /dev/sda1 /mnt
 mkdir /mnt/home
 mount /dev/sda2 /mnt/home
 ```
-
 _Optional_
 ```
 mkdir /mnt/boot
@@ -43,7 +40,6 @@ Server = http://archlinux.mirror.uber.com.au/$repo/os/$arch
 
 ##### fstab
 `genfstab -U -p /mnt >> /mnt/etc/fstab`
-
 To use labels in place of uuid's replace `-U` with `-L`
 
 ##### chroot and configure
